@@ -34,12 +34,29 @@ class Shape {
 		}
 	}
 	
+	static class Triangle extends Shape{
+		private int base;
+		private int height;
+		Triangle (String aName){
+			super (aName);
+			base = 3;
+			height = 4;
+		}
+		
+		public float calculateArea(){
+			int area;
+			area = base*height/2;
+			return area;
+		}
+	}
+	
 	
 	public static void main(String argv[]) {
 		// TODO Auto-generated method stub
 		Square s = new Square("Square S");
 		Circle c = new Circle("Circle C");
-		Shape shapeArray[] = {c,s};
+		Triangle t = new Triangle("Triangle T");
+		Shape shapeArray[] = {c,s,t};
 		for(int i = 0; i < shapeArray.length; i++){
 			System.out.println("The area of " + shapeArray[i].getName()
 					+ " is " + shapeArray[i].calculateArea() + " sq. cm.\n");
